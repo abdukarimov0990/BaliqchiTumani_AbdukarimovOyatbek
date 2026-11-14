@@ -4,7 +4,8 @@ import { Link } from "react-router";
 import type { Material } from "../../types/material";
 import { formatPrice, formatRegion } from "../../utils/format";
 import { getIssue } from "../../utils/materials";
-import { PurchaseModal } from "../purchase/PurchaseModal";
+import { AddToCartButton } from "../cart/AddToCartButton";
+import { CheckoutModal } from "../purchase/CheckoutModal";
 import { MaterialImage } from "./MaterialImage";
 import styles from "./MaterialCard.module.css";
 
@@ -73,14 +74,23 @@ export function MaterialCard({ material }: MaterialCardProps) {
               {formatPrice(material.price)}
             </span>
           </div>
-          <button type="button" className={styles.buyButton} onClick={() => setPurchaseOpen(true)}>
-            <ShoppingCart size={18} />
-            Xarid qilish
-          </button>
+          {/* Xarid qilish — 80%, savat — 20% */}
+          <div className={styles.actions}>
+            <button type="button" className={styles.buyButton} onClick={() => setPurchaseOpen(true)}>
+              <ShoppingCart size={18} />
+              Xarid qilish
+            </button>
+            <AddToCartButton material={material} />
+          </div>
         </div>
       </div>
 
-      <PurchaseModal material={material} open={purchaseOpen} onClose={() => setPurchaseOpen(false)} />
+      <CheckoutModal
+        open={purchaseOpen}
+        onClose={() => setPurchaseOpen(false)}
+        items={[{ material, quantity: 1 }]}
+        editableQuantity
+      />
     </article>
   );
 }

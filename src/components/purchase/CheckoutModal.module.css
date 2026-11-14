@@ -413,3 +413,96 @@
     white-space: nowrap;
   }
 }
+
+/* ---------- Bir nechta material (savatdan) ---------- */
+
+.lines {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.lineThumb {
+  flex-shrink: 0;
+  width: 56px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.lineThumb img {
+  padding: 2px;
+  border-bottom: 0;
+}
+
+/* Kichik o'lchamda placeholder yozuvi va doirasi sig'maydi */
+.lineThumb [role="img"] > span:last-child {
+  display: none;
+}
+
+.lineThumb [role="img"] > span:first-child {
+  width: 32px;
+  height: 32px;
+}
+
+.lineInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lineName {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.lineMeta {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.lineTotal {
+  color: var(--color-navy);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- Muvaffaqiyat tugmalari ---------- */
+
+.successActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 52px;
+  padding: 0 var(--space-6);
+  border: 1px solid var(--color-navy);
+  border-radius: var(--radius-md);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.secondary:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+}

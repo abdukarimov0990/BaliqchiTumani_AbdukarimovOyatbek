@@ -25,17 +25,23 @@ src/
   pages/SearchPage.tsx             — qidiruv natijalari (/search?q=...)
   pages/MaterialPage.tsx           — material sahifasi, miqdor tanlash (/materials/:id)
   pages/CategoryPage.tsx           — toifa sahifasi (/category/kafel, /category/barchasi)
+  pages/CartPage.tsx               — savat (/cart)
+  pages/OrdersPage.tsx             — buyurtmalar ro'yxati (/orders)
+  store/                           — savat va buyurtmalar holati (localStorage'da saqlanadi)
   config/site.ts                   — sayt nomi, menyu, header ma'lumotlari
   config/banners.ts                — bosh sahifa bannerlari
   config/categories.ts             — toifa ikonkalari va manzillari
   config/delivery.ts               — yetkazib berish muddati (kunlarda)
+  config/orders.ts                 — buyurtma holatlari nomlari
   styles/tokens.css                — dizayn tokenlari (ranglar, shriftlar, oraliqlar)
   styles/global.css                — umumiy uslublar va shriftlarni ulash
   types/material.ts                — Material tipi
+  types/order.ts                   — savat, buyurtma va buyurtmachi tiplari
   data/materials.ts                — materiallar ma'lumoti (shu yerda tahrirlanadi)
   utils/                           — ma'lumot, qidiruv, formatlash, miqdor va buyurtmani tekshirish
-  components/ui/                   — Button, Logo, SectionHeader, CategoryIcon, Modal
-  components/purchase/             — PurchaseModal (xaridni rasmiylashtirish)
+  components/ui/                   — Button, Logo, SectionHeader, CategoryIcon, Modal, Toast
+  components/purchase/             — CheckoutModal (xaridni rasmiylashtirish)
+  components/cart/                 — AddToCartButton
   components/layout/               — Header, Footer
   components/hero/                 — BannerSlider, CategoryBar
   components/search/               — SearchBar (header'dagi qidiruv)

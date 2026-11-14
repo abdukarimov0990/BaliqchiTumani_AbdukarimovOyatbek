@@ -155,7 +155,9 @@
   gap: var(--space-3);
 }
 
+/* Qidiruv, buyurtmalar va savat uchun bir xil ikonka-tugma */
 .searchButton {
+  position: relative;
   display: grid;
   place-items: center;
   width: 44px;
@@ -180,6 +182,29 @@
   border-color: var(--color-accent);
   background: var(--color-accent);
   color: var(--color-navy);
+}
+
+/* Savatdagi materiallar soni */
+.badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 2px solid var(--color-navy);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-navy);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.searchButtonActive .badge {
+  background: var(--color-white);
 }
 
 .searchPanel {
@@ -304,8 +329,8 @@
   }
 }
 
-/* Juda tor ekranda "Materiallarni ko'rish" sig'maydi — u menyuda ham bor */
-@media (max-width: 380px) {
+/* Tor ekranda "Materiallarni ko'rish" ikonkalar bilan sig'maydi — u menyuda ham bor */
+@media (max-width: 600px) {
   .cta {
     display: none;
   }

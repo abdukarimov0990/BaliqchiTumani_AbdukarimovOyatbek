@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ArrowRight, Clock, Menu, Phone, Search, Store, X } from "lucide-react";
-import { useLocation } from "react-router";
+import { ArrowRight, ClipboardList, Clock, Menu, Phone, Search, ShoppingBasket, Store, X } from "lucide-react";
+import { Link, useLocation } from "react-router";
+import { useShop } from "../../store/useShop";
 import { site, type SiteInfoIcon } from "../../config/site";
 import { SearchBar } from "../search/SearchBar";
 import { Button } from "../ui/Button";
@@ -35,6 +36,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { pathname } = useLocation();
+  const { cartCount } = useShop();
   const closeMenu = () => setMenuOpen(false);
 
   // "Bosh sahifa" faqat bosh sahifada aktiv ko'rinadi
@@ -104,6 +106,23 @@ export function Header() {
             >
               {searchOpen ? <X size={20} /> : <Search size={20} />}
             </button>
+            <Link
+              to="/orders"
+              className={`${styles.searchButton} ${pathname === "/orders" ? styles.searchButtonActive : ""}`}
+              aria-label="Buyurtmalarim"
+              title="Buyurtmalarim"
+            >
+              <ClipboardList size={20} />
+            </Link>
+            <Link
+              to="/cart"
+              className={`${styles.searchButton} ${pathname === "/cart" ? styles.searchButtonActive : ""}`}
+              aria-label={cartCount > 0 ? `Savat: ${cartCount} xil material` : "Savat"}
+              title="Savat"
+            >
+              <ShoppingBasket size={20} />
+              {cartCount > 0 && <span className={styles.badge}>{cartCount}</span>}
+            </Link>
             <div className={styles.cta}>
               <Button href="/#catalog" icon={<ArrowRight size={16} />}>
                 Materiallarni ko'rish

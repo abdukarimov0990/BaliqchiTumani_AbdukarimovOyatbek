@@ -3,7 +3,8 @@ import { ArrowLeft, ChevronRight, PackageX, ShoppingCart } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { MaterialImage } from "../components/materials/MaterialImage";
 import { QuantitySelector } from "../components/materials/QuantitySelector";
-import { PurchaseModal } from "../components/purchase/PurchaseModal";
+import { AddToCartButton } from "../components/cart/AddToCartButton";
+import { CheckoutModal } from "../components/purchase/CheckoutModal";
 import { Button } from "../components/ui/Button";
 import { CategoryIcon } from "../components/ui/CategoryIcon";
 import type { Material } from "../types/material";
@@ -108,15 +109,19 @@ function MaterialDetails({ material }: { material: Material }) {
                 <strong>{error ? "—" : formatPrice(Number(quantity) * material.price)}</strong>
               </div>
 
-              <button
-                type="button"
-                className={styles.buyButton}
-                disabled={Boolean(error)}
-                onClick={() => setPurchaseOpen(true)}
-              >
-                <ShoppingCart size={20} />
-                Xarid qilish
-              </button>
+              {/* Xarid qilish — 80%, savat — 20% */}
+              <div className={styles.actions}>
+                <button
+                  type="button"
+                  className={styles.buyButton}
+                  disabled={Boolean(error)}
+                  onClick={() => setPurchaseOpen(true)}
+                >
+                  <ShoppingCart size={20} />
+                  Xarid qilish
+                </button>
+                <AddToCartButton material={material} quantity={Number(quantity)} disabled={Boolean(error)} />
+              </div>
             </div>
 
             <Link to="/" className={styles.back}>
@@ -127,11 +132,11 @@ function MaterialDetails({ material }: { material: Material }) {
         </div>
       </div>
 
-      <PurchaseModal
-        material={material}
+      <CheckoutModal
         open={purchaseOpen}
         onClose={() => setPurchaseOpen(false)}
-        initialQuantity={Number(quantity)}
+        items={[{ material, quantity: Number(quantity) }]}
+        editableQuantity
       />
     </section>
   );

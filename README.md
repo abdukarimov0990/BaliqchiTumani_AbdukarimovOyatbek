@@ -19,21 +19,41 @@ npm run lint     # oxlint
 
 ```
 src/
-  main.tsx                     — kirish nuqtasi
-  App.tsx                      — asosiy komponent
-  index.css                    — umumiy uslublar
-  types/material.ts            — Material tipi
-  data/materials.ts            — materiallar ma'lumoti (shu yerda tahrirlanadi)
-  utils/materials.ts           — ma'lumot bilan ishlash funksiyalari
-  utils/format.ts              — narx va hududni formatlash
-  components/MaterialTable.tsx — materiallar jadvali
+  main.tsx                         — kirish nuqtasi
+  App.tsx                          — sahifa bo'limlarini yig'adi
+  config/site.ts                   — sayt nomi, menyu, header ma'lumotlari
+  config/banners.ts                — bosh sahifa bannerlari
+  config/categories.ts             — toifa ikonkalari
+  styles/tokens.css                — dizayn tokenlari (ranglar, shriftlar, oraliqlar)
+  styles/global.css                — umumiy uslublar va shriftlarni ulash
+  types/material.ts                — Material tipi
+  data/materials.ts                — materiallar ma'lumoti (shu yerda tahrirlanadi)
+  utils/                           — ma'lumot va formatlash funksiyalari
+  components/ui/                   — Button, Logo, SectionHeader
+  components/layout/               — Header, Footer
+  components/hero/                 — BannerSlider, CategoryBar
+  components/sections/             — Hero, Catalog, HowItWorks
+  components/materials/            — MaterialCard
 ```
 
-## Aniqlashtirish kerak
+Har bir komponentning uslubi yonidagi `*.module.css` faylida.
 
-| Kod | Maydon | Holat |
-|-----|--------|-------|
-| Q04 | Hudud  | Noma'lum (`region: null`) |
-| Q06 | Narx   | 65 000 so'm — tasdiqlanmagan |
+## Bannerlar
 
-Bu belgilar `data/materials.ts` dagi `issues` maydonida saqlanadi va sahifada ⚠ bilan ko'rsatiladi.
+Bannerlar ro'yxati `src/config/banners.ts` da, rasmlar `public/banners/` papkasida.
+Rasmni almashtirish uchun faylni shu papkaga qo'yib, `image` yo'lini o'zgartiring.
+Rasm o'lchami: 2048 × 768 px (8:3). Bannerlar har 5 soniyada aylanib almashadi.
+
+## Ranglar
+
+| Token | Rang | Qayerda |
+|-------|------|---------|
+| `--color-accent` | #FFBE2E | asosiy tugmalar, logotip, aksentlar |
+| `--color-navy` | #06132D | navigatsiya, footer, kontrast bloklar |
+| `--color-white` | #FFFFFF | asosiy fon va kontent |
+| `--color-gray-50` | #F4F5F7 | ikkilamchi fonlar |
+
+## Aniqlashtirish kerak bo'lgan ma'lumotlar
+
+Hozircha yo'q. Biror qiymat tasdiqlanmagan bo'lsa, `data/materials.ts` dagi
+`issues` maydoniga yoziladi — kartochkada u qiymat ajratib ko'rsatiladi va izoh chiqadi.

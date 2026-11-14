@@ -1,0 +1,122 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-navy);
+}
+
+/* Rasm asl ranglarida, 8:3 nisbatda (2048 × 768) — hech bir ekranda kesilmaydi */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 3;
+  object-fit: cover;
+}
+
+/* ---------- Strelkalar ---------- */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-navy);
+  box-shadow: 0 4px 16px rgba(6, 19, 45, 0.25);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
+}
+
+.arrow:hover {
+  background: var(--color-accent);
+}
+
+.prev {
+  left: var(--space-4);
+}
+
+.next {
+  right: var(--space-4);
+}
+
+/* ---------- Indikatorlar ---------- */
+
+/* Banner rasmlarida yozuv chap tomonda, shuning uchun indikatorlar o'ng pastda */
+.dots {
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 2;
+  display: flex;
+  gap: var(--space-2);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(6, 19, 45, 0.55);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition:
+    width 300ms ease,
+    background-color 300ms ease;
+}
+
+.dot:hover {
+  background: var(--color-white);
+}
+
+.dotActive,
+.dotActive:hover {
+  width: 28px;
+  background: var(--color-accent);
+}
+
+/* ---------- Moslashuvchanlik ---------- */
+
+@media (max-width: 768px) {
+  .slider {
+    border-radius: var(--radius-md);
+  }
+
+  /* Mobilda barmoq bilan suriladi, strelkalar kerak emas */
+  .arrow {
+    display: none;
+  }
+
+  .dots {
+    right: var(--space-2);
+    bottom: var(--space-2);
+    padding: 4px 8px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dotActive,
+  .dotActive:hover {
+    width: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+}

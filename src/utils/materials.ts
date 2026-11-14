@@ -19,3 +19,18 @@ export function getMaterialsWithIssues(): Material[] {
 export function getIssue(material: Material, field: MaterialField): MaterialIssue | undefined {
   return material.issues.find((issue) => issue.field === field);
 }
+
+/** Takrorlanmas toifalar ro'yxati (ma'lumotdagi tartibda). */
+export function getCategories(): string[] {
+  return [...new Set(materials.map((m) => m.category))];
+}
+
+/** Ma'lum bo'lgan hududlar ro'yxati (noma'lumlari hisobga olinmaydi). */
+export function getRegions(): string[] {
+  return [...new Set(materials.flatMap((m) => (m.region ? [m.region] : [])))];
+}
+
+/** Toifadagi materiallar soni. */
+export function countByCategory(category: string): number {
+  return materials.filter((m) => m.category === category).length;
+}

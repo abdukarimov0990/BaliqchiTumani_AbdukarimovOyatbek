@@ -1,0 +1,119 @@
+.list {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: var(--space-4);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-gray-50);
+  color: var(--color-navy);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.item:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-navy);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.count {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Tanlangan toifa — sariq aksent */
+.selected,
+.selected:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: none;
+}
+
+.selected .icon {
+  background: var(--color-navy);
+  color: var(--color-accent);
+}
+
+.selected .count {
+  color: rgba(6, 19, 45, 0.7);
+}
+
+/* Tor ekran: bir qatorda gorizontal surish */
+@media (max-width: 900px) {
+  .list {
+    display: flex;
+    gap: var(--space-3);
+    margin: 0 calc(-1 * var(--container-gutter));
+    padding: 0 var(--container-gutter) var(--space-2);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--container-gutter);
+    scrollbar-width: none;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .list li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .item {
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .name {
+    font-size: var(--text-base);
+  }
+
+  .count {
+    font-size: var(--text-xs);
+  }
+}

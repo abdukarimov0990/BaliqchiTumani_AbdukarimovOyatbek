@@ -1,15 +1,19 @@
-import { MaterialTable } from "./components/MaterialTable";
-import { getAllMaterials } from "./utils/materials";
+import { Footer } from "./components/layout/Footer";
+import { Header } from "./components/layout/Header";
+import { Catalog } from "./components/sections/Catalog";
+import { Hero } from "./components/sections/Hero";
+import { HowItWorks } from "./components/sections/HowItWorks";
 
 export default function App() {
   return (
     <>
-      <header>
-        <h1>Qurilishdan ortgan materiallar savdosi</h1>
-      </header>
+      <Header />
       <main>
-        <MaterialTable materials={getAllMaterials()} />
+        <Hero />
+        <Catalog />
+        <HowItWorks />
       </main>
+      <Footer />
     </>
   );
 }

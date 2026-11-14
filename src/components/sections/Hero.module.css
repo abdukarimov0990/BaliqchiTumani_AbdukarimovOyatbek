@@ -1,0 +1,18 @@
+.hero {
+  background: var(--color-white);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-7);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    gap: var(--space-5);
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-6);
+  }
+}

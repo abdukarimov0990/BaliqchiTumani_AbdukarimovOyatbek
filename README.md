@@ -28,12 +28,14 @@ src/
   config/site.ts                   — sayt nomi, menyu, header ma'lumotlari
   config/banners.ts                — bosh sahifa bannerlari
   config/categories.ts             — toifa ikonkalari va manzillari
+  config/delivery.ts               — yetkazib berish muddati (kunlarda)
   styles/tokens.css                — dizayn tokenlari (ranglar, shriftlar, oraliqlar)
   styles/global.css                — umumiy uslublar va shriftlarni ulash
   types/material.ts                — Material tipi
   data/materials.ts                — materiallar ma'lumoti (shu yerda tahrirlanadi)
-  utils/                           — ma'lumot, qidiruv, formatlash, miqdorni tekshirish
-  components/ui/                   — Button, Logo, SectionHeader, CategoryIcon
+  utils/                           — ma'lumot, qidiruv, formatlash, miqdor va buyurtmani tekshirish
+  components/ui/                   — Button, Logo, SectionHeader, CategoryIcon, Modal
+  components/purchase/             — PurchaseModal (xaridni rasmiylashtirish)
   components/layout/               — Header, Footer
   components/hero/                 — BannerSlider, CategoryBar
   components/search/               — SearchBar (header'dagi qidiruv)

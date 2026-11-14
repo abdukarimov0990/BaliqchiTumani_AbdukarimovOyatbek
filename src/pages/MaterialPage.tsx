@@ -3,6 +3,7 @@ import { ArrowLeft, ChevronRight, PackageX, ShoppingCart } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { MaterialImage } from "../components/materials/MaterialImage";
 import { QuantitySelector } from "../components/materials/QuantitySelector";
+import { PurchaseModal } from "../components/purchase/PurchaseModal";
 import { Button } from "../components/ui/Button";
 import { CategoryIcon } from "../components/ui/CategoryIcon";
 import type { Material } from "../types/material";
@@ -38,6 +39,7 @@ export function MaterialPage() {
 
 function MaterialDetails({ material }: { material: Material }) {
   const [quantity, setQuantity] = useState("1");
+  const [purchaseOpen, setPurchaseOpen] = useState(false);
   const error = validateQuantity(quantity, material.quantity, material.unit);
 
   const specs = [
@@ -106,8 +108,12 @@ function MaterialDetails({ material }: { material: Material }) {
                 <strong>{error ? "—" : formatPrice(Number(quantity) * material.price)}</strong>
               </div>
 
-              {/* Xarid funksiyasi keyingi bosqichda */}
-              <button type="button" className={styles.buyButton} disabled={Boolean(error)}>
+              <button
+                type="button"
+                className={styles.buyButton}
+                disabled={Boolean(error)}
+                onClick={() => setPurchaseOpen(true)}
+              >
                 <ShoppingCart size={20} />
                 Xarid qilish
               </button>
@@ -120,6 +126,13 @@ function MaterialDetails({ material }: { material: Material }) {
           </div>
         </div>
       </div>
+
+      <PurchaseModal
+        material={material}
+        open={purchaseOpen}
+        onClose={() => setPurchaseOpen(false)}
+        initialQuantity={Number(quantity)}
+      />
     </section>
   );
 }

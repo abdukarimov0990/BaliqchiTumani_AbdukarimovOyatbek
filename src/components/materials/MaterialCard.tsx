@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Layers, MapPin, Package, ShoppingCart, TriangleAlert } from "lucide-react";
 import { Link } from "react-router";
 import type { Material } from "../../types/material";
 import { formatPrice, formatRegion } from "../../utils/format";
 import { getIssue } from "../../utils/materials";
+import { PurchaseModal } from "../purchase/PurchaseModal";
 import { MaterialImage } from "./MaterialImage";
 import styles from "./MaterialCard.module.css";
 
@@ -13,6 +15,7 @@ interface MaterialCardProps {
 export function MaterialCard({ material }: MaterialCardProps) {
   const priceIssue = getIssue(material, "price");
   const regionIssue = getIssue(material, "region");
+  const [purchaseOpen, setPurchaseOpen] = useState(false);
 
   return (
     <article className={styles.card}>
@@ -70,13 +73,14 @@ export function MaterialCard({ material }: MaterialCardProps) {
               {formatPrice(material.price)}
             </span>
           </div>
-          {/* Xarid funksiyasi keyingi bosqichda */}
-          <button type="button" className={styles.buyButton}>
+          <button type="button" className={styles.buyButton} onClick={() => setPurchaseOpen(true)}>
             <ShoppingCart size={18} />
             Xarid qilish
           </button>
         </div>
       </div>
+
+      <PurchaseModal material={material} open={purchaseOpen} onClose={() => setPurchaseOpen(false)} />
     </article>
   );
 }

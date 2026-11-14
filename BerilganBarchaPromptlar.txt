@@ -1,3 +1,5 @@
+Skrinshotlar ko'payib ketting shuning uchun AIni o'ziga bergan hamma promptlarimni txt file qilib ber dedim.
+
 Qurilish Market — loyiha davomida berilgan promptlar (yuborilgan tartibda, o'zgartirishsiz)
 ==========================================================================================
 

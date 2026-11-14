@@ -37,7 +37,7 @@ src/
   components/layout/               — Header, Footer
   components/hero/                 — BannerSlider, CategoryBar
   components/search/               — SearchBar (header'dagi qidiruv)
-  components/sections/             — Hero, Catalog, HowItWorks
+  components/sections/             — Hero, Catalog
   components/materials/            — MaterialCard, MaterialGrid, MaterialImage, MaterialFilters, QuantitySelector
 ```
 

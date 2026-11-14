@@ -1,4 +1,5 @@
-import { Clock, Phone } from "lucide-react";
+import { Link } from "react-router";
+import { categoryPath } from "../../config/categories";
 import { site } from "../../config/site";
 import { getCategories } from "../../utils/materials";
 import { Logo } from "../ui/Logo";
@@ -33,32 +34,11 @@ export function Footer() {
           <ul className={styles.list}>
             {getCategories().map((category) => (
               <li key={category}>
-                <a href="/#catalog" className={styles.link}>
+                <Link to={categoryPath(category)} className={styles.link}>
                   {category}
-                </a>
+                </Link>
               </li>
             ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className={styles.heading}>Aloqa</h3>
-          <ul className={styles.list}>
-            {site.info.map((item) =>
-              item.icon === "phone" ? (
-                <li key={item.label} className={styles.contact}>
-                  <Phone size={16} />
-                  <a href={item.href} className={styles.link}>
-                    {item.value}
-                  </a>
-                </li>
-              ) : item.icon === "clock" ? (
-                <li key={item.label} className={styles.contact}>
-                  <Clock size={16} />
-                  {item.value}
-                </li>
-              ) : null,
-            )}
           </ul>
         </div>
       </div>

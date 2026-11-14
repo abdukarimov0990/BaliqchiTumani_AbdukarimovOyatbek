@@ -1,0 +1,135 @@
+Qurilish Market — loyiha davomida berilgan promptlar (yuborilgan tartibda, o'zgartirishsiz)
+==========================================================================================
+
+
+1-prompt
+--------
+Sen tajribali frontend dasturchisan. Biz birgalikda "Qurilishdan ortgan materiallar savdosi" degan kichik veb loyiha ustida ishlaymiz.
+
+Loyihaning asosiy maqsadi ta'mirdan ortib qolgan qurilish materiallarini oz miqdorda sotib olmoqchi bo'lgan odamlar uchun qulay sayt yaratish. Xaridor saytdan kerakli materialni topishi, qancha miqdorda olmoqchi ekanini kiritishi va xarid uchun so'rov yuborishi kerak.
+
+Hozircha hamma funksiyalarni birdaniga qilib tashlama. Avval loyihani yaxshilab tushunib ol va uning asosini tayyorla.
+
+Birinchi navbatda vazifani tahlil qil, qaysi texnologiyalardan foydalanish ma'qul ekanini aniqlab ol. Loyiha uchun kerakli papka va fayllarni yarat. Materiallar haqidagi ma'lumotlarni alohida joyda saqla, keyinchalik ularni o'zgartirish yoki yangilarini qo'shish oson bo'lsin.
+
+Boshlang'ich ma'lumotlar quyidagicha:
+
+Q01 — Oq kafel, Kafel, 20 dona, 15 000 so'm, A tumani.
+
+Q02 — Kulrang kafel, Kafel, 12 dona, 18 000 so'm, B tumani.
+
+Q03 — Yog'och taxta, Yog'och, 8 dona, 35 000 so'm, A tumani.
+
+Q04 — Yog'och reyka, Yog'och, 15 dona, 10 000 so'm. Hududi hozircha noma'lum.
+
+Q05 — Oq bo'yoq, Bo'yoq, 5 banka, 60 000 so'm, B tumani.
+
+Q06 — Ko'k bo'yoq, Bo'yoq, 3 banka, 65 000 so'm, B tumani.
+
+Ma'lumotlarni o'zingcha o'zgartirib yuborma. Q04 ning hududi va Q06 ning narxida aniqlashtirish kerak bo'lgan joylar bor, shularni alohida belgilab qo'y.
+
+Kodlarni imkon qadar tartibli va tushunarli yoz. Keyinchalik yangi funksiyalar qo'shish yoki mavjudlarini o'zgartirish qiyin bo'lmasin.
+
+Eng muhimi, hozircha faqat loyihaning birinchi bosqichi bilan shug'ullan. Dizayn, filtrlar yoki xarid funksiyalarini hali ishlab chiqishga o'tma. Avval asosiy tuzilmani tayyorlab, nimalar qilinganini qisqacha tushuntirib ber. Keyingi bosqichga men aytganimdan keyingina o'tamiz.
+
+
+2-prompt
+--------
+davom et
+
+
+3-prompt
+--------
+css jsda emas typescirpt hamda reactda qil
+
+
+4-prompt
+--------
+Endi saytni dizayn tomonini boshlaymiz, men yuborgan rasmdagi dizaynni asos qilib ol lekin uni aynan ko'chirib olishing shart emas shunchaki umumiy uslubi va ranglaridan foydalan. Sayt qurilish sohasi bilan bog'liq bo'lgani uchun professional va ishonchli ko'rinishi kerak, juda oddiy yoki havaskorlar qilganga o'xshab qolmasin. Asosiy stil modern construction corporate bo'lsin. Ranglar masalasiga kelsak asosiy sariq rang #FFBE2E bo'lib u muhim tugmalar, logotip qismi va ajratib ko'rsatish kerak bo'lgan elementlarda ishlatilsin, to'q ko'k #06132D navigatsiya paneli, footer va asosiy kontrast qismlar uchun, oq #FFFFFF asosiy fon va kontent uchun, och kulrang #F4F5F7 esa ikkilamchi fonlar va ajratilgan bloklarda ishlatilsin. Ranglar bir biriga mos tushsin sariq rangni hamma joyga ishlatib tashlama, u faqat kerakli joylarda aksent bo'lib tursin. Shriftlar zamonaviy va o'qishga qulay bo'lsin, sarlavhalar ancha yirik va qalinroq oddiy matnlar esa sodda ko'rinishda bo'lsin. Umumiy dizaynni professional kompaniya sayti darajasida qil va hozircha hech qanday funksionallikka o'tma faqat dizayn asoslarini tayyorla.
+
+
+5-prompt
+--------
+Endi saytni yuqori qismini yani header va navigatsiya qismini ishlab chiqamiz. Yuqori qism sariq #FFBE2E fonda bo'lsin. Chap tomonda sayt logotipi yoki nomi joylashsin, nomini hozircha "Qurilish Market" deb qo'yishimiz mumkin, yozuvi yirik, qalin va to'q ko'k rangda bo'lsin. O'ng tomonida esa sayt haqida qisqa ma'lumotlar joylashtir, masalan qurilish materiallari savdosi, aloqa raqami yoki ish vaqti kabi kichik bloklar bo'lsin. Har bir blokni mos va sodda iconlar bilan ifodala. Headerning tagidan to'q ko'k #06132D rangdagi navigatsiya paneli bo'lsin. Unda Bosh sahifa, Materiallar, Biz haqimizda va Aloqa kabi bo'limlar joylashsin. O'ng tarafda esa sariq rangdagi yoki oq chegarali "Materiallarni ko'rish" tugmasi bo'lishi mumkin. Sariq va to'q ko'k ranglar o'zaro yaxshi kontrast berishi kerak. Matnlar aniq o'qiladigan, elementlar orasidagi masofalar esa bir xil va tartibli bo'lsin. Mobil versiyada navigatsiya buzilib ketmasin, ekran kichrayganda menyu ixcham holatga o'tsin va kerak bo'lsa hamburger menyudan foydalan. Hozircha linklarni haqiqiy sahifalarga ulash yoki tugmalarga funksionallik berish shart emas, faqat header va navigatsiyaning tashqi ko'rinishini tayyorla. Mavjud loyiha tuzilishini saqla va boshqa qismlarga keraksiz o'zgartirish kiritma.
+
+
+6-prompt
+--------
+Endi saytning hero qismini ishlab chiqamiz. Bu qism zamonaviy marketplace uslubida bo'lsin, foydalanuvchi saytga kirishi bilan katta reklama banneri va uning tagida material kategoriyalarini ko'rishi kerak. Hero qismining yuqori qismida katta va keng banner swiper joylashsin. Unda jami 3 ta banner bo'lsin va ular avtomatik ravishda almashib tursin. Har bir banner uchun rasmni men o'zim qo'lda kiritaman, shuning uchun rasmlarni keyinchalik oson almashtirish mumkin bo'ladigan qilib alohida array yoki konfiguratsiya ichida saqla. Har bir bannerning o'z rasmi bo'lishi kerak. Swiper avtomatik o'tish bilan birga chap va o'ng strelkalar orqali qo'lda boshqarish imkoniyatiga ham ega bo'lsin, pastki qismida esa qaysi banner ochiq ekanini ko'rsatadigan kichik indikatorlar joylashsin. Bannerlar almashganda o'tish animatsiyasi silliq va yoqimli bo'lsin, lekin ortiqcha effektlardan foydalanma. Bannerning tagida material kategoriyalari joylashsin, ularni bir qatorda ixcham va chiroyli bloklar ko'rinishida chiqar. Kategoriyalar Barchasi, Kafel, Yog'och va Bo'yoq bo'lsin. Har bir kategoriya uchun kichik icon yoki rasm ishlatish mumkin, kategoriya nomi esa aniq va o'qishga qulay bo'lsin. Kategoriya bloklari och kulrang #F4F5F7 fonda, yozuvlari to'q ko'k #06132D rangda bo'lsin, tanlangan kategoriya esa sariq #FFBE2E rang bilan ajratilsin. Bannerning o'zi ham saytning umumiy ranglar tizimiga mos bo'lsin, lekin banner rasmlarining asl ranglarini suniy ravishda o'zgartirma. Hero fonini oq rangda saqla, banner va kategoriyalar orasidagi masofalar tartibli bo'lsin. Desktopda kategoriyalar bir qatorda joylashsin, mobil qurilmalarda esa ekran o'lchamiga moslashsin va kerak bo'lsa gorizontal surish imkoniyati bo'lsin. Umumiy ko'rinish juda toza, zamonaviy va professional marketplace darajasida chiqsin. Header bilan hero bir biriga mos tushsin va saytning umumiy dizayn uslubi buzilmasin. Hozircha kategoriyalarni bosganda filtrlash yoki boshqa funksiyalarni ishlatish shart emas, faqat swiper va kategoriyalarning tashqi ko'rinishi hamda bannerlarning avtomatik almashish funksiyasini ishlab chiq.
+
+
+7-prompt
+--------
+/Users/abdukarimov/Desktop/Olimpiada/public/banners man ashu filega 3ta rasm joyladim bannerlar shularni ana endi swiper o'rniga yo'q hamda textlar ham kerak emas ortiqcha shunchaki shu uchta rasm swiperda auto swipe bo'lib turishi kerak loop
+
+
+8-prompt
+--------
+Endi hero sectiondan keyin foydalanuvchi materiallarni tez topa olishi uchun qidiruv va toifalar joylashadigan qismni yaratamiz. Bu qism sodda, tushunarli va foydalanishga qulay bo'lsin. Avval kichik bir sarlavha joylashtir masalan "Kerakli materialni toping" va uning tagida material nomini yozish uchun keng qidiruv maydoni bo'lsin. Qidiruv maydonining yonida sariq #FFBE2E rangdagi qidirish tugmasi joylashsin. Qidiruv qismidan pastroqda Barchasi, Kafel, Yog'och va Bo'yoq degan toifalar uchun alohida tugmalar bo'lsin. Tanlangan toifa sariq fonda va to'q ko'k yozuvda, qolganlari esa oq yoki och kulrang fonda ko'rinishi mumkin. Sarlavhalar va asosiy matnlar to'q ko'k #06132D rangda bo'lsin. Oq va och kulrang ranglardan fon sifatida foydalan. Sariq rang esa faqat aktiv elementlar va muhim tugmalarni ajratish uchun ishlatilsin. Inputlar juda katta radiusli bo'lib ketmasin, yengil radius va nozik chegaralar bilan zamonaviy ko'rinishda bo'lsin. Elementlar orasidagi masofalar bir xil va tartibli bo'lishiga e'tibor ber. Mobil versiyada qidiruv maydoni va toifalar ekran o'lchamiga moslashsin. Hozircha qidiruv ham filtrlash ham ishlashi shart emas, faqat ularning interfeysini tayyorla.
+
+
+9-prompt
+--------
+davom et
+
+
+10-prompt
+---------
+qidirish qismini yuqoriga headrga ko'chir bitta button bo'lib tursin, qiduriv Misol Uchun Mahsulot nomi yozilganda Aohid apageda ochislin bunday yangi pastga bo'lim kerak emas
+
+
+11-prompt
+---------
+Endi saytning asosiy kontent qismi yani materiallar ko'rsatiladigan joyini ishlab chiqamiz. Materiallar alohida card ko'rinishida joylashsin va har bir card ichida material rasmi uchun joy, material nomi, ID raqami, toifasi, mavjud miqdori, bir birlik narxi va hududi ko'rsatilishi kerak. Cardlar bir xil o'lcham va tartibda bo'lsin, oralarida yetarli masofa bo'lsin va umumiy ko'rinishi toza hamda professional chiqsin. Oq fon asosiy bo'lsin, cardlar uchun juda yengil kulrang chegara yoki yumshoq soya ishlatish mumkin. Narxni boshqa ma'lumotlarga qaraganda ko'proq ko'zga tashlanadigan qilib ko'rsat, masalan to'q ko'k qalin yozuv va yonida kichik sariq aksent ishlat. Har bir cardning pastki qismida sariq #FFBE2E rangdagi "Xarid qilish" tugmasi bo'lsin, lekin hozircha uni ishlaydigan qilma. Material rasmlari bo'lmasa vaqtinchalik mos rasmlar yoki chiroyli placeholder ishlatish mumkin. Desktopda 3 ta card bir qatorda joylashsin, planshetda 2 ta va telefonda 1 ta bo'lib tushsin. Pastki qismda saytning umumiy footer qismi ham bo'lsin, u to'q ko'k #06132D fonda oq yozuvlar va sariq aksentlar bilan ishlasin. Barcha elementlarda bir xil shrift, ranglar va radiuslardan foydalan. Oldingi yaratilgan header va hero section bilan dizayn jihatdan bir xil ko'rinishda bo'lsin. Keraksiz animatsiyalar va ortiqcha bezaklar qo'shma. Hozircha faqat materiallar kartochkalari va footerning tashqi ko'rinishini yarat, xarid qilish funksiyasiga o'tma.
+
+ va har bir mahsulto ustiga ezganimni u o'zining pagega olib kirib ketsin pageda mahsulot rasmi kategoriyasi va u haqida hamma ma'lumtlaar tursin va sanoni begilashimi mumkin bo'lgin agaarda soni berilgan sondan oshib  ketsa xatolik chiqishi kerak
+
+
+12-prompt
+---------
+Katalog
+Mavjud materiallar
+Har bir material miqdori, narxi va joylashgan hududi bilan ko'rsatilgan.
+
+ mana shu yerdga ana endi yquorisaga ikki xil filtr qo'sh Birinchi kategoriya bo'yicha ikkinchi Hudud Bo'yicha Filter bo'lishi kerak
+
+
+13-prompt
+---------
+Undan keyn Hero Pastdagi Ktegorilar qismida har bir kateogiryani ustiga bosganimda yangi pagega o'tib faqat ana shu kateogirya bor nmahsulotlar chiqishi kerak
+
+
+14-prompt
+---------
+/Users/abdukarimov/Desktop/Olimpiada/public/Items mana bu yerda har bir mahsulot uchun rasmlar bor rasm nomi mahssulot omi bilan bir xil
+
+
+15-prompt
+---------
+Mahsulotni detaillarida, ID ko'rinishi kerak emas
+
+
+16-prompt
+---------
+Ana endi Bizga Qanday ishlaydi
+ sectioni kerak emas olib tashla hamda headerda hamda footerdagi, Biz haqimizga Hamda Aloqa Qismini Ham olib tashla
+
+
+17-prompt
+---------
+Toifalar
+Kafel
+Yog'och
+Bo'yoq
+
+ footerdagi mana shu qismda ham birorta kategoriyani bosganimda o'sha kategoriyani pageiga o'tib ketsin huddi heroning pastdagi buttonlar kabi
+
+
+18-prompt
+---------
+Ana endi esa harid qilish qismi harid qilish tugmasi bosilganda modla chiqishi kerak u modda haridning hamma ma'lumtolarni hamda necha kunda yetb kelishi bo'lishi kerak tahminan 3kun qilib qo'y hamda hariddi rasmiylashitrish bo'lsin hamma ma'lumtolar tog'ri bo'ladigan bo'lsa harid rasmiylashtirilsin
+
+
+19-prompt
+---------
+ana endi esa 2ta narsa qo'shish kerak biricnhi bi Savat, Ikkinchi Esa Qilingan Buyurtmalar, Savat buttoni Har bir mahsulot Xarid qilish Buttoning Oldiga qo'y iconni o'zi bilan yani 80% qismni Xarid qilish egallasin 20%ni esa Savat iconkasi Savatda ham miqdorlar tanlansin savatga qo'shilsin keyn savatdagi barhca mahsulotlarni umumiy xarid qilish funskiaysi ham bo'lsin ,Buyurtma ro'xyatida bo'lsa Hamma qilingan buyurtmalar ularning narxlari hamda hozrgi holati, default yetkazib berilmoqda bo'ladi ikkalasininag iconini headerga joylashtir

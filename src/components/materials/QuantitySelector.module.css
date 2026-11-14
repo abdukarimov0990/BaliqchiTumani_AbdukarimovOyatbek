@@ -1,0 +1,97 @@
+.wrapper {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: stretch;
+  width: fit-content;
+  height: 48px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: border-color var(--transition);
+}
+
+.stepper:focus-within {
+  border-color: var(--color-navy);
+}
+
+.invalid,
+.invalid:focus-within {
+  border-color: var(--color-danger);
+}
+
+.step {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  border: 0;
+  background: var(--color-gray-50);
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.step:hover:not(:disabled) {
+  background: var(--color-border);
+}
+
+.step:disabled {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input {
+  width: 64px;
+  border: 0;
+  background: transparent;
+  color: var(--color-navy);
+  font: inherit;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  text-align: right;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.unit {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-3) 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.error {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}

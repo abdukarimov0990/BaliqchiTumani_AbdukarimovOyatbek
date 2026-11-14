@@ -22,6 +22,8 @@
   --color-warning-text: #9a4a00;
   --color-warning-bg: #fff3e0;
   --color-warning-border: #ffd9a8;
+  --color-danger: #c62828;
+  --color-danger-bg: #fdecec;
 
   /* Shriftlar */
   --font-heading: "Barlow", "Arial Narrow", system-ui, sans-serif;

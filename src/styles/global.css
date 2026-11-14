@@ -67,3 +67,13 @@ button {
   margin: 0 auto;
   padding: 0 var(--container-gutter);
 }
+
+/* Ekranda ko'rinmaydi, lekin ekran o'quvchilar uchun mavjud */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

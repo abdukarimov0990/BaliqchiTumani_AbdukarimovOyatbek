@@ -111,6 +111,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition:
     color var(--transition),
     background-color var(--transition);
@@ -144,6 +145,47 @@
 .navLink:hover::after,
 .navLink[aria-current="page"]::after {
   transform: scaleX(1);
+}
+
+/* ---------- Qidiruv tugmasi va paneli ---------- */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.searchButton {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.searchButton:hover {
+  border-color: var(--color-white);
+}
+
+.searchButtonActive,
+.searchButtonActive:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-navy);
+}
+
+.searchPanel {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border-dark);
+  background: var(--color-navy);
 }
 
 .menuButton {
@@ -225,13 +267,8 @@
   }
 }
 
-/* Mobil: ma'lumotlar va menyu hamburger ichiga o'tadi */
-@media (max-width: 860px) {
-  .topbarInner {
-    min-height: 76px;
-  }
-
-  .info,
+/* Planshet: menyu bo'limlari hamburger ichiga o'tadi */
+@media (max-width: 1024px) {
   .navList {
     display: none;
   }
@@ -242,6 +279,17 @@
 
   .mobileMenu.open {
     display: block;
+  }
+}
+
+/* Mobil: header'dagi ma'lumot bloklari ham faqat menyuda qoladi */
+@media (max-width: 860px) {
+  .topbarInner {
+    min-height: 76px;
+  }
+
+  .info {
+    display: none;
   }
 }
 
@@ -256,9 +304,23 @@
   }
 }
 
+/* Juda tor ekranda "Materiallarni ko'rish" sig'maydi — u menyuda ham bor */
+@media (max-width: 380px) {
+  .cta {
+    display: none;
+  }
+}
+
 /* Juda tor ekran: faqat hamburger ikonkasi qoladi */
 @media (max-width: 400px) {
   .menuButton span {
+    display: none;
+  }
+}
+
+/* Ma'lumot bloklari header'da ko'rinib turganda menyuda takrorlanmaydi */
+@media (min-width: 861px) {
+  .mobileInfo {
     display: none;
   }
 }

@@ -1,0 +1,145 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-gray-50);
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+  width: 240px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  height: 48px;
+  padding: 0 calc(var(--space-4) + 18px + var(--space-2)) 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-navy);
+  font: inherit;
+  font-size: var(--text-base);
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.select:hover {
+  border-color: #c9ced8;
+}
+
+.select:focus {
+  border-color: var(--color-navy);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 19, 45, 0.08);
+}
+
+/* Tanlangan filtr — sariq chegara bilan ajratiladi */
+.active .select {
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+  font-weight: 600;
+}
+
+.chevron {
+  position: absolute;
+  top: 50%;
+  right: var(--space-4);
+  color: var(--color-navy);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 48px;
+}
+
+.count {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.reset {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.reset:hover {
+  border-color: var(--color-navy);
+}
+
+@media (max-width: 640px) {
+  .bar {
+    padding: var(--space-4);
+  }
+
+  .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: var(--space-3);
+  }
+
+  .field {
+    width: auto;
+    min-width: 0;
+  }
+
+  .select {
+    font-size: var(--text-sm);
+  }
+
+  .summary {
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

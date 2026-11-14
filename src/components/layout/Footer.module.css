@@ -6,7 +6,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
   gap: var(--space-7);
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
@@ -34,6 +34,17 @@
 
 .link {
   transition: color var(--transition);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.contact svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
 }
 
 .link:hover {

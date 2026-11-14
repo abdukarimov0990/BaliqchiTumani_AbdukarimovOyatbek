@@ -10,7 +10,7 @@ interface LogoProps {
 export function Logo({ variant = "dark" }: LogoProps) {
   return (
     <a
-      href="#top"
+      href="/"
       className={`${styles.logo} ${styles[variant]}`}
       aria-label={`${site.name.primary} ${site.name.accent} — bosh sahifa`}
     >

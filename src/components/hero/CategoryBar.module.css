@@ -16,7 +16,6 @@
   background: var(--color-gray-50);
   color: var(--color-navy);
   text-align: left;
-  cursor: pointer;
   transition:
     background-color var(--transition),
     border-color var(--transition),

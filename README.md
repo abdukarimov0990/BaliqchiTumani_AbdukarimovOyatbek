@@ -20,20 +20,25 @@ npm run lint     # oxlint
 ```
 src/
   main.tsx                         — kirish nuqtasi
-  App.tsx                          — sahifa bo'limlarini yig'adi
+  App.tsx                          — header, sahifalar (marshrutlar), footer
+  pages/HomePage.tsx               — bosh sahifa (/)
+  pages/SearchPage.tsx             — qidiruv natijalari (/search?q=...)
+  pages/MaterialPage.tsx           — material sahifasi, miqdor tanlash (/materials/:id)
+  pages/CategoryPage.tsx           — toifa sahifasi (/category/kafel, /category/barchasi)
   config/site.ts                   — sayt nomi, menyu, header ma'lumotlari
   config/banners.ts                — bosh sahifa bannerlari
-  config/categories.ts             — toifa ikonkalari
+  config/categories.ts             — toifa ikonkalari va manzillari
   styles/tokens.css                — dizayn tokenlari (ranglar, shriftlar, oraliqlar)
   styles/global.css                — umumiy uslublar va shriftlarni ulash
   types/material.ts                — Material tipi
   data/materials.ts                — materiallar ma'lumoti (shu yerda tahrirlanadi)
-  utils/                           — ma'lumot va formatlash funksiyalari
-  components/ui/                   — Button, Logo, SectionHeader
+  utils/                           — ma'lumot, qidiruv, formatlash, miqdorni tekshirish
+  components/ui/                   — Button, Logo, SectionHeader, CategoryIcon
   components/layout/               — Header, Footer
   components/hero/                 — BannerSlider, CategoryBar
+  components/search/               — SearchBar (header'dagi qidiruv)
   components/sections/             — Hero, Catalog, HowItWorks
-  components/materials/            — MaterialCard
+  components/materials/            — MaterialCard, MaterialGrid, MaterialImage, MaterialFilters, QuantitySelector
 ```
 
 Har bir komponentning uslubi yonidagi `*.module.css` faylida.

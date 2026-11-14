@@ -18,6 +18,8 @@ export interface Material {
   unit: string;
   /** Narx, so'mda */
   price: number;
+  /** Rasm yo'li (public/materials/ ichida); bo'lmasa placeholder ko'rsatiladi */
+  image?: string;
   /** Hudud; noma'lum bo'lsa null */
   region: string | null;
   /** Aniqlashtirilishi kerak bo'lgan maydonlar (bo'lmasa bo'sh) */

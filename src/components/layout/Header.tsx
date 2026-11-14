@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { ArrowRight, Clock, Menu, Phone, Store, X } from "lucide-react";
+import { ArrowRight, Clock, Menu, Phone, Search, Store, X } from "lucide-react";
+import { useLocation } from "react-router";
 import { site, type SiteInfoIcon } from "../../config/site";
+import { SearchBar } from "../search/SearchBar";
 import { Button } from "../ui/Button";
 import { Logo } from "../ui/Logo";
 import styles from "./Header.module.css";
@@ -31,7 +33,22 @@ function InfoItem({ item }: { item: (typeof site.info)[number] }) {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const { pathname } = useLocation();
   const closeMenu = () => setMenuOpen(false);
+
+  // "Bosh sahifa" faqat bosh sahifada aktiv ko'rinadi
+  const isCurrent = (index: number) => (pathname === "/" && index === 0 ? "page" : undefined);
+
+  function toggleMenu() {
+    setMenuOpen((open) => !open);
+    setSearchOpen(false);
+  }
+
+  function toggleSearch() {
+    setSearchOpen((open) => !open);
+    setMenuOpen(false);
+  }
 
   return (
     <>
@@ -56,7 +73,7 @@ export function Header() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Menyuni yopish" : "Menyuni ochish"}
-            onClick={() => setMenuOpen((open) => !open)}
+            onClick={toggleMenu}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
             <span>Menyu</span>
@@ -68,7 +85,7 @@ export function Header() {
                 <a
                   href={item.href}
                   className={styles.navLink}
-                  aria-current={index === 0 ? "page" : undefined}
+                  aria-current={isCurrent(index)}
                 >
                   {item.label}
                 </a>
@@ -76,12 +93,33 @@ export function Header() {
             ))}
           </ul>
 
-          <div className={styles.cta}>
-            <Button href="#catalog" icon={<ArrowRight size={16} />}>
-              Materiallarni ko'rish
-            </Button>
+          <div className={styles.actions}>
+            <button
+              type="button"
+              className={`${styles.searchButton} ${searchOpen ? styles.searchButtonActive : ""}`}
+              aria-expanded={searchOpen}
+              aria-controls="header-search"
+              aria-label={searchOpen ? "Qidiruvni yopish" : "Qidirish"}
+              onClick={toggleSearch}
+            >
+              {searchOpen ? <X size={20} /> : <Search size={20} />}
+            </button>
+            <div className={styles.cta}>
+              <Button href="/#catalog" icon={<ArrowRight size={16} />}>
+                Materiallarni ko'rish
+              </Button>
+            </div>
           </div>
         </div>
+
+        {/* Qidiruv paneli */}
+        {searchOpen && (
+          <div id="header-search" className={styles.searchPanel}>
+            <div className="container">
+              <SearchBar autoFocus onSearch={() => setSearchOpen(false)} />
+            </div>
+          </div>
+        )}
 
         {/* Mobil menyu */}
         <div id="mobile-menu" className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}>
@@ -92,7 +130,7 @@ export function Header() {
                   <a
                     href={item.href}
                     className={styles.mobileNavLink}
-                    aria-current={index === 0 ? "page" : undefined}
+                    aria-current={isCurrent(index)}
                     onClick={closeMenu}
                   >
                     {item.label}

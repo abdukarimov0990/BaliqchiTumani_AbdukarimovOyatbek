@@ -3,10 +3,10 @@ export const site = {
   name: { primary: "Qurilish", accent: "Market" },
   tagline: "Ta'mirdan ortgan qurilish materiallari savdosi",
   nav: [
-    { label: "Bosh sahifa", href: "#top" },
-    { label: "Materiallar", href: "#catalog" },
-    { label: "Biz haqimizda", href: "#about" },
-    { label: "Aloqa", href: "#contact" },
+    { label: "Bosh sahifa", href: "/#top" },
+    { label: "Materiallar", href: "/#catalog" },
+    { label: "Biz haqimizda", href: "/#about" },
+    { label: "Aloqa", href: "/#contact" },
   ],
   // Telefon va ish vaqti hozircha namuna sifatida — haqiqiy ma'lumot bilan almashtirilishi kerak
   info: [
